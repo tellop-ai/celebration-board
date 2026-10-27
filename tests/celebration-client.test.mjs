@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {request} from '../lib/celebration/client.js';
+import {request,videoShowsPicture} from '../lib/celebration/client.js';
 
 test('canceling an optional draft aborts its POST transport',async()=>{
  const before=globalThis.fetch;const controller=new AbortController();let signal;
@@ -33,4 +33,9 @@ test('print waits for pictures, refuses broken images and bounds a font that nev
  await assert.rejects(()=>waitForPrintPictures({...page,querySelector:()=>({})}));
  await assert.rejects(()=>waitForPrintPictures({...page,querySelectorAll:()=>[{decode:async()=>{throw new Error('broken');}}]}));
  await assert.rejects(()=>waitForPrintPictures({...page,fonts:{ready:new Promise(()=>{})}},10));
+});
+test('a video whose sound plays but whose picture cannot be drawn counts as one that cannot be shown',()=>{
+ assert.equal(videoShowsPicture({videoWidth:320,videoHeight:240}),true);
+ assert.equal(videoShowsPicture({videoWidth:0,videoHeight:0}),false);
+ assert.equal(videoShowsPicture({videoWidth:320,videoHeight:0}),false);
 });
