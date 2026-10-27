@@ -1,0 +1,409 @@
+{
+  "record": "tellop-app-words",
+  "version": 1,
+  "keys": [],
+  "records": [
+    {
+      "name": "Board",
+      "label": {
+        "en": "Boards",
+        "tr": "Panolar"
+      },
+      "fields": [
+        {
+          "name": "id",
+          "label": {
+            "en": "Identifier",
+            "tr": "Kimlik"
+          }
+        },
+        {
+          "name": "ownerId",
+          "label": {
+            "en": "Owner",
+            "tr": "Sahip"
+          }
+        },
+        {
+          "name": "title",
+          "label": {
+            "en": "Title",
+            "tr": "Başlık"
+          }
+        },
+        {
+          "name": "recipient",
+          "label": {
+            "en": "Recipient",
+            "tr": "Alıcı"
+          }
+        },
+        {
+          "name": "occasion",
+          "label": {
+            "en": "Occasion",
+            "tr": "Vesile"
+          }
+        },
+        {
+          "name": "occasionDate",
+          "label": {
+            "en": "Occasion date",
+            "tr": "Kutlama günü"
+          }
+        },
+        {
+          "name": "introduction",
+          "label": {
+            "en": "Introduction",
+            "tr": "Giriş"
+          }
+        },
+        {
+          "name": "coverFile",
+          "label": {
+            "en": "Original cover",
+            "tr": "Asıl kapak"
+          }
+        },
+        {
+          "name": "coverDisplayFile",
+          "label": {
+            "en": "Display cover",
+            "tr": "Görüntülenen kapak"
+          }
+        },
+        {
+          "name": "coverAlt",
+          "label": {
+            "en": "Cover description",
+            "tr": "Kapak açıklaması"
+          }
+        },
+        {
+          "name": "layout",
+          "label": {
+            "en": "Layout",
+            "tr": "Düzen"
+          }
+        },
+        {
+          "name": "status",
+          "label": {
+            "en": "State",
+            "tr": "Durum"
+          }
+        },
+        {
+          "name": "reviewRequired",
+          "label": {
+            "en": "Review required",
+            "tr": "Onay gerekli"
+          }
+        },
+        {
+          "name": "contributionsCloseAt",
+          "label": {
+            "en": "Contributions close at",
+            "tr": "Mesaj kabul bitişi"
+          }
+        },
+        {
+          "name": "presentedAt",
+          "label": {
+            "en": "Presented at",
+            "tr": "Sunulma zamanı"
+          }
+        },
+        {
+          "name": "createdAt",
+          "label": {
+            "en": "Added at",
+            "tr": "Eklenme zamanı"
+          }
+        },
+        {
+          "name": "updatedAt",
+          "label": {
+            "en": "Last changed",
+            "tr": "Son değişiklik"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Post",
+      "label": {
+        "en": "Messages",
+        "tr": "Mesajlar"
+      },
+      "fields": [
+        {
+          "name": "id",
+          "label": {
+            "en": "Identifier",
+            "tr": "Kimlik"
+          }
+        },
+        {
+          "name": "ownerId",
+          "label": {
+            "en": "Owner",
+            "tr": "Sahip"
+          }
+        },
+        {
+          "name": "boardId",
+          "label": {
+            "en": "Board",
+            "tr": "Pano"
+          }
+        },
+        {
+          "name": "authorName",
+          "label": {
+            "en": "Signature",
+            "tr": "İmza"
+          }
+        },
+        {
+          "name": "body",
+          "label": {
+            "en": "Message",
+            "tr": "Mesaj"
+          }
+        },
+        {
+          "name": "createdBy",
+          "label": {
+            "en": "Added by",
+            "tr": "Ekleyen"
+          }
+        },
+        {
+          "name": "origin",
+          "label": {
+            "en": "Source",
+            "tr": "Kaynak"
+          }
+        },
+        {
+          "name": "status",
+          "label": {
+            "en": "State",
+            "tr": "Durum"
+          }
+        },
+        {
+          "name": "position",
+          "label": {
+            "en": "Order",
+            "tr": "Sıra"
+          }
+        },
+        {
+          "name": "reviewedBy",
+          "label": {
+            "en": "Reviewed by",
+            "tr": "Onaylayan"
+          }
+        },
+        {
+          "name": "reviewedAt",
+          "label": {
+            "en": "Reviewed at",
+            "tr": "Onay zamanı"
+          }
+        },
+        {
+          "name": "createdAt",
+          "label": {
+            "en": "Added at",
+            "tr": "Eklenme zamanı"
+          }
+        },
+        {
+          "name": "updatedAt",
+          "label": {
+            "en": "Last changed",
+            "tr": "Son değişiklik"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Media",
+      "label": {
+        "en": "Attachments",
+        "tr": "Ekler"
+      },
+      "fields": [
+        {
+          "name": "id",
+          "label": {
+            "en": "Identifier",
+            "tr": "Kimlik"
+          }
+        },
+        {
+          "name": "ownerId",
+          "label": {
+            "en": "Owner",
+            "tr": "Sahip"
+          }
+        },
+        {
+          "name": "boardId",
+          "label": {
+            "en": "Board",
+            "tr": "Pano"
+          }
+        },
+        {
+          "name": "postId",
+          "label": {
+            "en": "Message",
+            "tr": "Mesaj"
+          }
+        },
+        {
+          "name": "originalFile",
+          "label": {
+            "en": "Original file",
+            "tr": "Asıl dosya"
+          }
+        },
+        {
+          "name": "displayFile",
+          "label": {
+            "en": "Display picture",
+            "tr": "Görüntülenen resim"
+          }
+        },
+        {
+          "name": "kind",
+          "label": {
+            "en": "Kind",
+            "tr": "Tür"
+          }
+        },
+        {
+          "name": "description",
+          "label": {
+            "en": "Description",
+            "tr": "Açıklama"
+          }
+        },
+        {
+          "name": "position",
+          "label": {
+            "en": "Order",
+            "tr": "Sıra"
+          }
+        },
+        {
+          "name": "createdBy",
+          "label": {
+            "en": "Added by",
+            "tr": "Ekleyen"
+          }
+        },
+        {
+          "name": "createdAt",
+          "label": {
+            "en": "Added at",
+            "tr": "Eklenme zamanı"
+          }
+        },
+        {
+          "name": "updatedAt",
+          "label": {
+            "en": "Last changed",
+            "tr": "Son değişiklik"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BoardMember",
+      "label": {
+        "en": "Board members",
+        "tr": "Pano üyeleri"
+      },
+      "fields": [
+        {
+          "name": "id",
+          "label": {
+            "en": "Identifier",
+            "tr": "Kimlik"
+          }
+        },
+        {
+          "name": "ownerId",
+          "label": {
+            "en": "Owner",
+            "tr": "Sahip"
+          }
+        },
+        {
+          "name": "boardId",
+          "label": {
+            "en": "Board",
+            "tr": "Pano"
+          }
+        },
+        {
+          "name": "personId",
+          "label": {
+            "en": "Person",
+            "tr": "Kişi"
+          }
+        },
+        {
+          "name": "role",
+          "label": {
+            "en": "Role",
+            "tr": "Görev"
+          }
+        },
+        {
+          "name": "createdAt",
+          "label": {
+            "en": "Added at",
+            "tr": "Eklenme zamanı"
+          }
+        },
+        {
+          "name": "updatedAt",
+          "label": {
+            "en": "Last changed",
+            "tr": "Son değişiklik"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BoardPreference",
+      "label": {
+        "en": "Preferences",
+        "tr": "Tercihler"
+      },
+      "fields": [
+        {
+          "name": "ownerId",
+          "label": {
+            "en": "Owner",
+            "tr": "Sahip"
+          }
+        },
+        {
+          "name": "language",
+          "label": {
+            "en": "Language",
+            "tr": "Dil"
+          }
+        }
+      ]
+    }
+  ]
+}

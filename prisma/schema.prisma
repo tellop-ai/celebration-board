@@ -1,0 +1,128 @@
+// The shape of what this app stores.
+//
+// This file is the agent's editing surface: a change
+// to how the app keeps information is a change *here*, and Tellop's data-change
+// pipeline turns it into a reviewed, rehearsed step in `prisma/migrations/`.
+// Nothing edits those step files by hand - they are what has already been applied.
+//
+// The stored names are the ones this template has always used (`people`, `notes`,
+// `owner_id`, ...), kept through `@map`/`@@map` rather than renamed, so an app
+// created before this change reads its own saved information unchanged.
+//
+// There is deliberately no `url` here. Version 7 takes the location from the
+// config file beside it, and Tellop supplies that location per operation rather
+// than trusting whatever a project file happens to say.
+
+generator client {
+  provider     = "prisma-client"
+  output       = "../lib/data/generated"
+  moduleFormat = "esm"
+  runtime      = "nodejs"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Person {
+  id       String  @id
+  name     String
+  isSample Boolean @default(false) @map("is_sample")
+  notes    Note[]
+
+  @@map("people")
+}
+
+model Note {
+  id        Int    @id @default(autoincrement())
+  ownerId   String @map("owner_id")
+  body      String
+  createdAt String @map("created_at")
+  owner     Person @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+
+  @@index([ownerId, id], map: "notes_by_owner")
+  @@map("notes")
+}
+
+model Board {
+  id                   String        @id
+  ownerId              String
+  title                String
+  recipient            String
+  occasion             String
+  occasionDate         String?
+  introduction         String        @default("")
+  coverFile            String?
+  coverDisplayFile     String?
+  coverAlt             String        @default("")
+  layout               String        @default("gallery")
+  status               String        @default("draft")
+  reviewRequired       Boolean       @default(true)
+  contributionsCloseAt String?
+  presentedAt          String?
+  createdAt            String
+  updatedAt            String
+  posts                Post[]
+  members              BoardMember[]
+
+  @@unique([ownerId, id])
+  @@index([ownerId, status, id])
+}
+
+model Post {
+  id         String  @id
+  ownerId    String
+  boardId    String
+  authorName String
+  body       String  @default("")
+  createdBy  String
+  origin     String  @default("owner")
+  status     String  @default("visible")
+  position   Float   @default(0)
+  reviewedBy String?
+  reviewedAt String?
+  createdAt  String
+  updatedAt  String
+  board      Board   @relation(fields: [ownerId, boardId], references: [ownerId, id], onDelete: Cascade)
+  media      Media[]
+
+  @@unique([ownerId, boardId, id])
+  @@index([ownerId, boardId, status, position, id])
+}
+
+model Media {
+  id           String  @id
+  ownerId      String
+  boardId      String
+  postId       String
+  originalFile String?
+  displayFile  String?
+  kind         String
+  description  String  @default("")
+  position     Int     @default(0)
+  createdBy    String
+  createdAt    String
+  updatedAt    String
+  post         Post    @relation(fields: [ownerId, boardId, postId], references: [ownerId, boardId, id], onDelete: Cascade)
+
+  @@index([ownerId, boardId, postId, position, id])
+}
+
+model BoardMember {
+  id        String @id
+  ownerId   String
+  boardId   String
+  personId  String
+  role      String
+  createdAt String
+  updatedAt String
+  board     Board  @relation(fields: [ownerId, boardId], references: [ownerId, id], onDelete: Cascade)
+
+  @@unique([ownerId, boardId, personId, role])
+}
+
+model BoardPreference {
+  ownerId    String @id
+  language   String
+  appearance String
+}
