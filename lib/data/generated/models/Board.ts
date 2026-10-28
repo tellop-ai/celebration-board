@@ -36,6 +36,7 @@ export type BoardMinAggregateOutputType = {
   coverDisplayFile: string | null
   coverAlt: string | null
   layout: string | null
+  palette: string | null
   status: string | null
   reviewRequired: boolean | null
   contributionsCloseAt: string | null
@@ -56,6 +57,7 @@ export type BoardMaxAggregateOutputType = {
   coverDisplayFile: string | null
   coverAlt: string | null
   layout: string | null
+  palette: string | null
   status: string | null
   reviewRequired: boolean | null
   contributionsCloseAt: string | null
@@ -76,6 +78,7 @@ export type BoardCountAggregateOutputType = {
   coverDisplayFile: number
   coverAlt: number
   layout: number
+  palette: number
   status: number
   reviewRequired: number
   contributionsCloseAt: number
@@ -98,6 +101,7 @@ export type BoardMinAggregateInputType = {
   coverDisplayFile?: true
   coverAlt?: true
   layout?: true
+  palette?: true
   status?: true
   reviewRequired?: true
   contributionsCloseAt?: true
@@ -118,6 +122,7 @@ export type BoardMaxAggregateInputType = {
   coverDisplayFile?: true
   coverAlt?: true
   layout?: true
+  palette?: true
   status?: true
   reviewRequired?: true
   contributionsCloseAt?: true
@@ -138,6 +143,7 @@ export type BoardCountAggregateInputType = {
   coverDisplayFile?: true
   coverAlt?: true
   layout?: true
+  palette?: true
   status?: true
   reviewRequired?: true
   contributionsCloseAt?: true
@@ -231,6 +237,7 @@ export type BoardGroupByOutputType = {
   coverDisplayFile: string | null
   coverAlt: string
   layout: string
+  palette: string | null
   status: string
   reviewRequired: boolean
   contributionsCloseAt: string | null
@@ -272,6 +279,7 @@ export type BoardWhereInput = {
   coverDisplayFile?: Prisma.StringNullableFilter<"Board"> | string | null
   coverAlt?: Prisma.StringFilter<"Board"> | string
   layout?: Prisma.StringFilter<"Board"> | string
+  palette?: Prisma.StringNullableFilter<"Board"> | string | null
   status?: Prisma.StringFilter<"Board"> | string
   reviewRequired?: Prisma.BoolFilter<"Board"> | boolean
   contributionsCloseAt?: Prisma.StringNullableFilter<"Board"> | string | null
@@ -294,6 +302,7 @@ export type BoardOrderByWithRelationInput = {
   coverDisplayFile?: Prisma.SortOrderInput | Prisma.SortOrder
   coverAlt?: Prisma.SortOrder
   layout?: Prisma.SortOrder
+  palette?: Prisma.SortOrderInput | Prisma.SortOrder
   status?: Prisma.SortOrder
   reviewRequired?: Prisma.SortOrder
   contributionsCloseAt?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -320,6 +329,7 @@ export type BoardWhereUniqueInput = Prisma.AtLeast<{
   coverDisplayFile?: Prisma.StringNullableFilter<"Board"> | string | null
   coverAlt?: Prisma.StringFilter<"Board"> | string
   layout?: Prisma.StringFilter<"Board"> | string
+  palette?: Prisma.StringNullableFilter<"Board"> | string | null
   status?: Prisma.StringFilter<"Board"> | string
   reviewRequired?: Prisma.BoolFilter<"Board"> | boolean
   contributionsCloseAt?: Prisma.StringNullableFilter<"Board"> | string | null
@@ -342,6 +352,7 @@ export type BoardOrderByWithAggregationInput = {
   coverDisplayFile?: Prisma.SortOrderInput | Prisma.SortOrder
   coverAlt?: Prisma.SortOrder
   layout?: Prisma.SortOrder
+  palette?: Prisma.SortOrderInput | Prisma.SortOrder
   status?: Prisma.SortOrder
   reviewRequired?: Prisma.SortOrder
   contributionsCloseAt?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -368,6 +379,7 @@ export type BoardScalarWhereWithAggregatesInput = {
   coverDisplayFile?: Prisma.StringNullableWithAggregatesFilter<"Board"> | string | null
   coverAlt?: Prisma.StringWithAggregatesFilter<"Board"> | string
   layout?: Prisma.StringWithAggregatesFilter<"Board"> | string
+  palette?: Prisma.StringNullableWithAggregatesFilter<"Board"> | string | null
   status?: Prisma.StringWithAggregatesFilter<"Board"> | string
   reviewRequired?: Prisma.BoolWithAggregatesFilter<"Board"> | boolean
   contributionsCloseAt?: Prisma.StringNullableWithAggregatesFilter<"Board"> | string | null
@@ -388,6 +400,7 @@ export type BoardCreateInput = {
   coverDisplayFile?: string | null
   coverAlt?: string
   layout?: string
+  palette?: string | null
   status?: string
   reviewRequired?: boolean
   contributionsCloseAt?: string | null
@@ -410,6 +423,7 @@ export type BoardUncheckedCreateInput = {
   coverDisplayFile?: string | null
   coverAlt?: string
   layout?: string
+  palette?: string | null
   status?: string
   reviewRequired?: boolean
   contributionsCloseAt?: string | null
@@ -432,6 +446,7 @@ export type BoardUpdateInput = {
   coverDisplayFile?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   coverAlt?: Prisma.StringFieldUpdateOperationsInput | string
   layout?: Prisma.StringFieldUpdateOperationsInput | string
+  palette?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.StringFieldUpdateOperationsInput | string
   reviewRequired?: Prisma.BoolFieldUpdateOperationsInput | boolean
   contributionsCloseAt?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -454,6 +469,7 @@ export type BoardUncheckedUpdateInput = {
   coverDisplayFile?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   coverAlt?: Prisma.StringFieldUpdateOperationsInput | string
   layout?: Prisma.StringFieldUpdateOperationsInput | string
+  palette?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.StringFieldUpdateOperationsInput | string
   reviewRequired?: Prisma.BoolFieldUpdateOperationsInput | boolean
   contributionsCloseAt?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -476,6 +492,7 @@ export type BoardCreateManyInput = {
   coverDisplayFile?: string | null
   coverAlt?: string
   layout?: string
+  palette?: string | null
   status?: string
   reviewRequired?: boolean
   contributionsCloseAt?: string | null
@@ -496,6 +513,7 @@ export type BoardUpdateManyMutationInput = {
   coverDisplayFile?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   coverAlt?: Prisma.StringFieldUpdateOperationsInput | string
   layout?: Prisma.StringFieldUpdateOperationsInput | string
+  palette?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.StringFieldUpdateOperationsInput | string
   reviewRequired?: Prisma.BoolFieldUpdateOperationsInput | boolean
   contributionsCloseAt?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -516,6 +534,7 @@ export type BoardUncheckedUpdateManyInput = {
   coverDisplayFile?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   coverAlt?: Prisma.StringFieldUpdateOperationsInput | string
   layout?: Prisma.StringFieldUpdateOperationsInput | string
+  palette?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.StringFieldUpdateOperationsInput | string
   reviewRequired?: Prisma.BoolFieldUpdateOperationsInput | boolean
   contributionsCloseAt?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -541,6 +560,7 @@ export type BoardCountOrderByAggregateInput = {
   coverDisplayFile?: Prisma.SortOrder
   coverAlt?: Prisma.SortOrder
   layout?: Prisma.SortOrder
+  palette?: Prisma.SortOrder
   status?: Prisma.SortOrder
   reviewRequired?: Prisma.SortOrder
   contributionsCloseAt?: Prisma.SortOrder
@@ -561,6 +581,7 @@ export type BoardMaxOrderByAggregateInput = {
   coverDisplayFile?: Prisma.SortOrder
   coverAlt?: Prisma.SortOrder
   layout?: Prisma.SortOrder
+  palette?: Prisma.SortOrder
   status?: Prisma.SortOrder
   reviewRequired?: Prisma.SortOrder
   contributionsCloseAt?: Prisma.SortOrder
@@ -581,6 +602,7 @@ export type BoardMinOrderByAggregateInput = {
   coverDisplayFile?: Prisma.SortOrder
   coverAlt?: Prisma.SortOrder
   layout?: Prisma.SortOrder
+  palette?: Prisma.SortOrder
   status?: Prisma.SortOrder
   reviewRequired?: Prisma.SortOrder
   contributionsCloseAt?: Prisma.SortOrder
@@ -638,6 +660,7 @@ export type BoardCreateWithoutPostsInput = {
   coverDisplayFile?: string | null
   coverAlt?: string
   layout?: string
+  palette?: string | null
   status?: string
   reviewRequired?: boolean
   contributionsCloseAt?: string | null
@@ -659,6 +682,7 @@ export type BoardUncheckedCreateWithoutPostsInput = {
   coverDisplayFile?: string | null
   coverAlt?: string
   layout?: string
+  palette?: string | null
   status?: string
   reviewRequired?: boolean
   contributionsCloseAt?: string | null
@@ -696,6 +720,7 @@ export type BoardUpdateWithoutPostsInput = {
   coverDisplayFile?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   coverAlt?: Prisma.StringFieldUpdateOperationsInput | string
   layout?: Prisma.StringFieldUpdateOperationsInput | string
+  palette?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.StringFieldUpdateOperationsInput | string
   reviewRequired?: Prisma.BoolFieldUpdateOperationsInput | boolean
   contributionsCloseAt?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -717,6 +742,7 @@ export type BoardUncheckedUpdateWithoutPostsInput = {
   coverDisplayFile?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   coverAlt?: Prisma.StringFieldUpdateOperationsInput | string
   layout?: Prisma.StringFieldUpdateOperationsInput | string
+  palette?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.StringFieldUpdateOperationsInput | string
   reviewRequired?: Prisma.BoolFieldUpdateOperationsInput | boolean
   contributionsCloseAt?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -738,6 +764,7 @@ export type BoardCreateWithoutMembersInput = {
   coverDisplayFile?: string | null
   coverAlt?: string
   layout?: string
+  palette?: string | null
   status?: string
   reviewRequired?: boolean
   contributionsCloseAt?: string | null
@@ -759,6 +786,7 @@ export type BoardUncheckedCreateWithoutMembersInput = {
   coverDisplayFile?: string | null
   coverAlt?: string
   layout?: string
+  palette?: string | null
   status?: string
   reviewRequired?: boolean
   contributionsCloseAt?: string | null
@@ -796,6 +824,7 @@ export type BoardUpdateWithoutMembersInput = {
   coverDisplayFile?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   coverAlt?: Prisma.StringFieldUpdateOperationsInput | string
   layout?: Prisma.StringFieldUpdateOperationsInput | string
+  palette?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.StringFieldUpdateOperationsInput | string
   reviewRequired?: Prisma.BoolFieldUpdateOperationsInput | boolean
   contributionsCloseAt?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -817,6 +846,7 @@ export type BoardUncheckedUpdateWithoutMembersInput = {
   coverDisplayFile?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   coverAlt?: Prisma.StringFieldUpdateOperationsInput | string
   layout?: Prisma.StringFieldUpdateOperationsInput | string
+  palette?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.StringFieldUpdateOperationsInput | string
   reviewRequired?: Prisma.BoolFieldUpdateOperationsInput | boolean
   contributionsCloseAt?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -878,6 +908,7 @@ export type BoardSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   coverDisplayFile?: boolean
   coverAlt?: boolean
   layout?: boolean
+  palette?: boolean
   status?: boolean
   reviewRequired?: boolean
   contributionsCloseAt?: boolean
@@ -901,6 +932,7 @@ export type BoardSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   coverDisplayFile?: boolean
   coverAlt?: boolean
   layout?: boolean
+  palette?: boolean
   status?: boolean
   reviewRequired?: boolean
   contributionsCloseAt?: boolean
@@ -921,6 +953,7 @@ export type BoardSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   coverDisplayFile?: boolean
   coverAlt?: boolean
   layout?: boolean
+  palette?: boolean
   status?: boolean
   reviewRequired?: boolean
   contributionsCloseAt?: boolean
@@ -941,6 +974,7 @@ export type BoardSelectScalar = {
   coverDisplayFile?: boolean
   coverAlt?: boolean
   layout?: boolean
+  palette?: boolean
   status?: boolean
   reviewRequired?: boolean
   contributionsCloseAt?: boolean
@@ -949,7 +983,7 @@ export type BoardSelectScalar = {
   updatedAt?: boolean
 }
 
-export type BoardOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "ownerId" | "title" | "recipient" | "occasion" | "occasionDate" | "introduction" | "coverFile" | "coverDisplayFile" | "coverAlt" | "layout" | "status" | "reviewRequired" | "contributionsCloseAt" | "presentedAt" | "createdAt" | "updatedAt", ExtArgs["result"]["board"]>
+export type BoardOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "ownerId" | "title" | "recipient" | "occasion" | "occasionDate" | "introduction" | "coverFile" | "coverDisplayFile" | "coverAlt" | "layout" | "palette" | "status" | "reviewRequired" | "contributionsCloseAt" | "presentedAt" | "createdAt" | "updatedAt", ExtArgs["result"]["board"]>
 export type BoardInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   posts?: boolean | Prisma.Board$postsArgs<ExtArgs>
   members?: boolean | Prisma.Board$membersArgs<ExtArgs>
@@ -976,6 +1010,7 @@ export type $BoardPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     coverDisplayFile: string | null
     coverAlt: string
     layout: string
+    palette: string | null
     status: string
     reviewRequired: boolean
     contributionsCloseAt: string | null
@@ -1418,6 +1453,7 @@ export interface BoardFieldRefs {
   readonly coverDisplayFile: Prisma.FieldRef<"Board", 'String'>
   readonly coverAlt: Prisma.FieldRef<"Board", 'String'>
   readonly layout: Prisma.FieldRef<"Board", 'String'>
+  readonly palette: Prisma.FieldRef<"Board", 'String'>
   readonly status: Prisma.FieldRef<"Board", 'String'>
   readonly reviewRequired: Prisma.FieldRef<"Board", 'Boolean'>
   readonly contributionsCloseAt: Prisma.FieldRef<"Board", 'String'>

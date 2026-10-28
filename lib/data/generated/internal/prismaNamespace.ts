@@ -995,6 +995,7 @@ export const BoardScalarFieldEnum = {
   coverDisplayFile: 'coverDisplayFile',
   coverAlt: 'coverAlt',
   layout: 'layout',
+  palette: 'palette',
   status: 'status',
   reviewRequired: 'reviewRequired',
   contributionsCloseAt: 'contributionsCloseAt',

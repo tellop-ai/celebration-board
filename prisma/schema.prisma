@@ -56,6 +56,7 @@ model Board {
   coverDisplayFile     String?
   coverAlt             String        @default("")
   layout               String        @default("gallery")
+  palette              String?
   status               String        @default("draft")
   reviewRequired       Boolean       @default(true)
   contributionsCloseAt String?

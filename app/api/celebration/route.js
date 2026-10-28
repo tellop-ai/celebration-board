@@ -1,5 +1,5 @@
 import { randomUUID } from 'node:crypto';
-import { listBoardsFor, listPostsFor, readPostFor, saveBoardFor, savePostFor, setBoardStatusFor, setPostVisibilityFor, movePostFor, removePostFor, savePreferencesFor } from '../../../lib/data/index.js';
+import { listBoardsFor, listPostsFor, readPostFor, saveBoardFor, savePostFor, setBoardStatusFor, setBoardAppearanceFor, setPostVisibilityFor, movePostFor, removePostFor, savePreferencesFor } from '../../../lib/data/index.js';
 import { OWNER, object, fail } from '../../../lib/celebration/rules.js';
 import { json, problem, readJson } from '../../../lib/celebration/http.js';
 import { draftMessageFor } from '../../../lib/celebration/draft.js';
@@ -21,6 +21,7 @@ export async function POST(request) {
     switch (input.action) {
       case 'create-board': result = await saveBoardFor(OWNER, input, true); break;
       case 'edit-board': result = await saveBoardFor(OWNER, input); break;
+      case 'board-appearance': result = await setBoardAppearanceFor(OWNER, input.boardId, input); break;
       case 'board-status': result = await setBoardStatusFor(OWNER, input.boardId, input.status, input.updatedAt); break;
       case 'create-post': result = await savePostFor(OWNER, input.boardId, input, true); break;
       case 'edit-post': result = await savePostFor(OWNER, input.boardId, input); break;

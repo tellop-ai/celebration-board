@@ -1,6 +1,6 @@
 # Celebration board
 
-Make celebration boards with signed messages, photos, GIFs and videos. Arrange your board, show a slideshow, or print a keepsake. Optional AI helps draft a message. This version works on your Mac. Invitations and contributions from other devices are not available yet.
+Bring messages, photos and videos together for someone special. Choose a color palette for each board, then present or print it. AI writing help is optional. Existing installations need Tellop support for saved-data updates before they can take this version.
 
 This app was made with Tellop, the app builder by Pathnomic Labs, on Tellop's
 starting kit: Next.js and React, with Node's own SQLite for what the app keeps.

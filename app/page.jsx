@@ -8,7 +8,13 @@ export default async function Home({ searchParams }) {
   const view = ['preferences', 'present', 'print'].includes(query?.view) ? query.view : '';
   try {
     const preferences = await preferencesFor(OWNER); locale = preferences?.language ?? locale; appearance = preferences?.appearance ?? appearance;
-    if (view !== 'preferences') initial = query?.board ? await listPostsFor(OWNER, query.board, { visibleOnly: view === 'present' || view === 'print' }) : { ...await listBoardsFor(OWNER, { archived: query?.archived === '1', query: query?.q ?? '' }), archived: query?.archived === '1', query: query?.q ?? '' };
+    if (view !== 'preferences' && query?.board) {
+      const board = await listPostsFor(OWNER, query.board, { visibleOnly: view === 'present' || view === 'print' });
+      const navigation = view === 'print' ? null : await listBoardsFor(OWNER);
+      initial = { ...board, navigationBoards: navigation?.boards ?? [], navigationMore: Boolean(navigation?.next) };
+    } else if (view !== 'preferences') {
+      initial = { ...await listBoardsFor(OWNER, { archived: query?.archived === '1', query: query?.q ?? '' }), archived: query?.archived === '1', query: query?.q ?? '' };
+    }
   } catch (error) { initial = { problem: error.messageKey ?? 'error.storageUnreadable' }; }
   // The contained records channel returns dictionaries without prototypes.
   // This page selects JSON scalars only; React's server/client boundary needs ordinary objects.
