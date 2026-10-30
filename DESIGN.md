@@ -16,5 +16,5 @@ one on a phone. Reading layout centers one wider card per row. Content decides e
 Daily management uses PageFrame, CountsLine, AppMenu and DataTable. Message forms use Dialog with a bounded
 height, scrollable fields and reachable actions. Personal pictures use PictureField, videos use FileUpload.
 Slideshow pictures use contain; no autoplay sound or motion. AI drafts are separate proposals until accepted.
-Local-only sharing notice is plain text, with no dead invite control. Printing still prepares every visible
-message before it prints and never includes hidden messages or an open form.
+There is no invite control: people come in through Tellop's own door. Printing still prepares every visible
+message before it prints and never includes hidden or waiting messages or an open form.

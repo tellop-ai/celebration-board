@@ -112,8 +112,8 @@ export function PostForm({ board, post, draftId, locale, onClose, onSaved }) {
         }
         media.push(item);
       }
-      await request({ action: post ? 'edit-post' : 'create-post', boardId: board.id, id: post?.id ?? draftId, updatedAt: post?.updatedAt, authorName: name, body, media });
-      setAttachments([]); onSaved();
+      const saved = await request({ action: post ? 'edit-post' : 'create-post', boardId: board.id, id: post?.id ?? draftId, updatedAt: post?.updatedAt, authorName: name, body, media });
+      setAttachments([]); onSaved(saved);
     } catch (e) { setError(e.messageKey ?? 'error.saveFailed'); } finally { setBusy(false); }
   }
   return <FormWindow title={t(post ? 'cb.editMessage' : 'cb.messageFor', locale, { name: board.recipient })} description={board.title} onClose={close} busy={busy} wide>

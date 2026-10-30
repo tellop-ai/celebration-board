@@ -1,6 +1,6 @@
 # Celebration board
 
-Bring messages, photos and videos together for someone special. Choose a color palette for each board, then present or print it. AI writing help is optional. Existing installations need Tellop support for saved-data updates before they can take this version.
+Make celebration boards with messages, photos, GIFs and videos. Choose a color palette for each board, then present a slideshow or print a keepsake. Optional AI helps with wording. Put it online from Tellop: people you let in as Members add messages from their own devices, and Viewers watch.
 
 This app was made with Tellop, the app builder by Pathnomic Labs, on Tellop's
 starting kit: Next.js and React, with Node's own SQLite for what the app keeps.
